@@ -219,6 +219,7 @@ section{position:relative}
 .tick-track{display:flex;width:max-content;animation:slide 42s linear infinite}
 .tk{display:inline-flex;align-items:baseline;gap:12px;padding:0 34px;white-space:nowrap;font-size:15px;color:var(--ink2)}
 .tk b{font-size:34px;font-weight:600;letter-spacing:-.04em;color:#fff}
+.tk-ic{width:22px;height:22px;border-radius:50%;align-self:center;margin-right:-4px}
 .tk-sep{align-self:center;width:5px;height:5px;background:var(--gold);transform:rotate(45deg);flex:none;opacity:.7}
 @keyframes slide{to{transform:translateX(-50%)}}
 .broll{overflow:hidden;padding:20px 0 0}
@@ -568,6 +569,10 @@ dialog .brand img{width:40px;height:40px}
 .founded img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(255,255,255,.35);flex:none}
 .founded b{color:#fff;font-weight:600}
 .fd-sep{color:var(--ink4)}
+.fd-cred{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px}
+.founded .fd-ic{width:20px;height:20px;border-radius:50%;border:0;object-fit:cover}
+.founded .fd-ic.sq{border-radius:5px}
+.fd-and{margin:0 4px;color:var(--ink3)}
 @media (max-width:640px){.founded{flex-wrap:wrap;row-gap:2px;font-size:14px}.founded img{width:36px;height:36px}.fd-cred{flex-basis:100%;padding-left:48px;margin-top:-6px}.fd-sep{display:none}}
 
 /* loading screen: the only intro moment; hero animations wait for it */
@@ -629,7 +634,7 @@ dialog .brand img{width:40px;height:40px}
       <a href="#samenwerken">Samenwerken</a>
     </nav>
     <div class="nav-r">
-      <button class="login" type="button" data-login><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Klant login</span></button>
+      <a class="login" href="https://moretraffic.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Klant login</span></a>
       <a class="btn btn-chrome btn-sm" href="#contact" data-book>Boek een call</a>
       <button class="burger" type="button" aria-label="Menu openen" data-menu><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
@@ -641,7 +646,7 @@ dialog .brand img{width:40px;height:40px}
   <a href="#platforms">Platforms</a>
   <a href="#podcast">Podcast</a>
   <a href="#samenwerken">Samenwerken</a>
-  <a href="#" data-login style="font-size:24px;font-family:var(--sans);text-transform:none;font-weight:500;color:var(--ink2);margin-top:14px">Klant login</a>
+  <a href="https://moretraffic.com" style="font-size:24px;font-family:var(--sans);text-transform:none;font-weight:500;color:var(--ink2);margin-top:14px">Klant login</a>
   <a class="btn btn-chrome" href="#contact">Boek een call</a>
 </div>
 
@@ -659,7 +664,7 @@ dialog .brand img{width:40px;height:40px}
         <a class="btn btn-chrome" href="#contact" data-book>Boek een call</a>
         <a class="btn btn-ghost" href="#platforms">Bekijk de platforms</a>
       </div>
-      <p class="founded"><img src="media/clyde.jpg" alt=""><span>Opgericht door <b>Clyde</b></span><span class="fd-sep" aria-hidden="true">·</span><span class="fd-cred">Wat doe jij voor werk? en Echte Huur</span></p>
+      <p class="founded"><img src="media/clyde.jpg" alt=""><span>Opgericht door <b>Clyde</b></span><span class="fd-sep" aria-hidden="true">·</span><span class="fd-cred"><img class="fd-ic" src="media/wdjvw-logo.jpg" alt="">Wat doe jij voor werk?<span class="fd-and">en</span><img class="fd-ic sq" src="media/echtehuur-logo.jpg" alt="">Echte Huur</span></p>
     </div>
   </div>
 </section>
@@ -883,7 +888,7 @@ dialog .brand img{width:40px;height:40px}
         <a href="#wdjvw">Wat doe jij voor werk?</a>
         <a href="#echtehuur">Echte Huur</a>
         <a href="#podcast">Podcast</a>
-          <a href="#" data-login>Klant login</a>
+          <a href="https://moretraffic.com">Klant login</a>
         <a href="#contact">Contact</a>
       </div>
       <span>© 2026 More Traffiq</span>
@@ -951,7 +956,7 @@ const SITE = {
   email: "info@moretraffiq.com",
   whatsapp: "",                 // bv. "31612345678"
   bookingUrl: "",               // bv. Calendly / Cal.com link
-  portalUrl: "",                // URL van het klantportaal
+  portalUrl: "https://moretraffic.com",                // URL van het klantportaal
   clydeGptUrl: "",              // link naar ClydeGPT (vraag wordt als ?q= meegegeven)
   // header: muur van reels (vervangen door heroVideo zodra Clyde's eigen video er is)
   heroReels: [
@@ -1036,7 +1041,7 @@ const SITE = {
   results: [
     { value: "10M", label: "views per maand" },
     { value: "3M", label: "views per maand" },
-    { value: "32,7K", label: "volgers op Wat doe jij voor werk?" },
+    { value: "32,7K", label: "volgers op Wat doe jij voor werk?", logo: "media/wdjvw-logo.jpg" },
     { value: "124", label: "ondernemers geïnterviewd" },
     { value: "38K", label: "views op één podcastaflevering" }
   ],
@@ -1139,7 +1144,7 @@ const SITE = {
   $("#wdGuests").innerHTML = [...SITE.guests.map(g => ({ img: g.img, name: "" })), ...SITE.clients.slice(0, 5)].map(g => g.name ? `<span class="guest"><img src="${esc(g.img)}" alt="">${esc(g.name)}</span>` : `<span class="guest solo"><img src="${esc(g.img)}" alt=""></span>`).join("") + `<span class="guest more">${SITE.wdjvw.posts ? SITE.wdjvw.posts + "+ interviews" : "en meer"}</span>`;
 
   /* ---------- results ticker + b-roll band ---------- */
-  const tk = SITE.results.map(r => `<span class="tk"><b>${esc(r.value)}</b>${esc(r.label)}</span><i class="tk-sep"></i>`).join("");
+  const tk = SITE.results.map(r => `<span class="tk"><b>${esc(r.value)}</b>${r.logo ? `<img class="tk-ic" src="${esc(r.logo)}" alt="">` : ""}${esc(r.label)}</span><i class="tk-sep"></i>`).join("");
   $("#tickTrack").innerHTML = tk + tk + tk + tk;
 
 
